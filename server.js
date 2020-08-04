@@ -5,6 +5,8 @@ const indexRouter = require('./routes/index');
 
 const app = express();
 
+require('./config/database');
+
 app.set('view engine', 'ejs');
 
 app.use(morgan('dev'));
