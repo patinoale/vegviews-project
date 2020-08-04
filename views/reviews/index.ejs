@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>VegViews Reviews</title>
+</head>
+<body>
+    <h1>Reviews Index</h1>
+    <table>
+        <thead>
+            <th>Title</th>
+            <th>Opinion</th>
+            <th>Rating</th>
+            <th>Link</th>
+        </thead>
+        <tbody>
+            <% reviews.forEach(review => { %>
+                <tr>
+                    <td><%= review.title %></td>
+                    <td><%= review.opinion %></td>
+                    <td><%= review.rating %></td>
+                    <td><%= review.link %></td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</body>
+</html>
