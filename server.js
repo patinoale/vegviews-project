@@ -13,6 +13,7 @@ require('./config/passport');
 
 const indexRouter = require('./routes/index');
 const reviewsRouter = require('./routes/reviews');
+const commentsRouter = require('./routes/comments');
 
 app.set('view engine', 'ejs');
 
@@ -33,6 +34,7 @@ app.use(passport.session());
 
 app.use('/', indexRouter);
 app.use('/reviews', reviewsRouter);
+app.use('/', commentsRouter);
 
 app.listen(port, function() {
     console.log(`Express is listening on port:${port}`);
