@@ -3,15 +3,24 @@ const Review = require('../models/review');
 module.exports = {
     new: newReview,
     create,
-    index
+    index,
+    show
 };
 
 function index(req, res) {
     Review.find({}, function(err, reviews) {
-        res.render('reviews/index', {
-            reviews
-        });
+        res.render('reviews/index', { title: 'All Reviews', reviews, user: req.user });
     });
+}
+
+function show(req, res) {
+    Review.findById(req.params.id, function(err, review) {
+      res.render('reviews/show', { title: 'Review Detail', review, user: req.user });
+    });
+  }
+
+function newReview(req, res) {
+    res.render('reviews/new', { title: 'Add Review', user: req.user });
 }
 
 function create(req, res) {
@@ -21,8 +30,4 @@ function create(req, res) {
         console.log(review);
         res.redirect('/reviews');
     });
-}
-
-function newReview(req, res) {
-    res.render('reviews/new');
 }

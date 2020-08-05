@@ -1,34 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel='stylesheet' href='/css/style.css' />
-  <title>VegViews Reviews</title>
-</head>
-<body>
-    <h2>Enter a New Review</h2>
-        <form action="/reviews" method="POST">
-            <label>Title:
-            <input type="text" name="title">
-            </label>
-            <label>Link:
-            <input type="text" name="link">
-            <label>Rating:
-            </label>
-            <select name="rating">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            </select>
-            </label>
-            <label>Opinion:
-            <input type="text" name="opinion">
-            </label>
-            <input type="submit" value="Add Review">
-        </form>
-</body>
-</html>
+<%- include('../partials/header') %>
+
+<form id="new-form" action="/reviews" method="POST">
+  <label>Title:
+    <input type="text" name="title">
+  </label>
+  <label>Link:
+    <input type="text" name="link">
+  <label>Rating:
+  </label>
+  <select name="rating">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+  </select>
+  </label>
+  <label>Opinion:
+    <input type="text" name="opinion">
+  </label>
+  <input type="submit" value="Add Review">
+</form>
+
+<%- include('../partials/footer') %>

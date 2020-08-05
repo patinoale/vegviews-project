@@ -1,0 +1,14 @@
+<%- include('../partials/header') %>
+
+<section id="show-page">
+  <div>Title: </div>
+  <div><%= review.title %></div>
+  <div>Review: </div>
+  <div><%= review.opinion %></div>
+  <div>Rating: </div>
+  <div><%= review.rating %></div>
+  <div>Check it out:</div>
+  <div><a target='_blank' href="<%= review.link %>">HERE</a></div>
+</section>
+  
+<%- include('../partials/footer') %>
