@@ -1,7 +1,7 @@
 const Review = require('../models/review');
 
 module.exports = {
- create
+ create,
 };
 
 function create(req, res) {
@@ -12,3 +12,4 @@ function create(req, res) {
       });
     });
    }
+

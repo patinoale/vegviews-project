@@ -4,7 +4,8 @@ module.exports = {
     new: newReview,
     create,
     index,
-    show
+    show,
+    delete: deleteReview,
 };
 
 function index(req, res) {
@@ -27,7 +28,14 @@ function create(req, res) {
     const review = new Review(req.body);
     review.save(function(err) {
         if (err) return res.render('reviews/new');
-        console.log(review);
         res.redirect('/reviews');
     });
 }
+
+function deleteReview(req, res) {
+    Review.findByIdAndDelete(req.params.id, function(err) {
+        res.redirect('/reviews');
+    });
+}
+
+
