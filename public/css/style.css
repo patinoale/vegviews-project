@@ -1,53 +1,58 @@
 * {
-    box-sizing: border-box;
-    font-family: Helvetica;
-    color: #424748;
-  }
+  box-sizing: border-box;
+  font-family: Helvetica;
+  color: #424748;
+}
 
 main {
-    background: url(https://i.imgur.com/QMz46gH.jpg) no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-  }
+  background: url(https://i.imgur.com/QMz46gH.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 
-  body {
-    margin: 0;
-    height: 100vh;
-    display: grid;
-    grid-template-rows: 50px 1fr;
-    grid-template-areas:
-      "nav"
-      "main"
-  }
+body {
+  margin: 0;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 50px 1fr;
+  grid-template-areas: "nav" "main"
+}
   
-  body > nav {
-    grid-area: nav;
-    background-color: #4b7803;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 0 20px 0 30px;
-  }
+body > nav {
+  grid-area: nav;
+  background-color: #4b7803;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 20px 0 30px;
+}
   
- #app-name {
-    object-fit: contain;
-    margin-right: auto;
-    color: #f1bf20;
-    font-family: 'Indie Flower', cursive;
-    font-size: 38px;
-  }
+.logo {
+  object-fit: contain;
+  margin-right: auto;
+  color: #f1bf20;
+  font-family: 'Indie Flower', cursive;
+  font-size: 38px;
+}
+
+#logo-image {
+  display: block;
+  text-align: left;
+  width: 40px;
+  height: 40px;
+}
   
-  body > main {
-    grid-area: main;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #E8ECEB;
-    padding: 20px;
-    overflow-y: scroll;
-  }
+body > main {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #E8ECEB;
+  padding: 20px;
+  overflow-y: scroll;
+}
   
   body > main h1:first-child {
     margin-bottom: 50px;
@@ -142,10 +147,16 @@ main {
      font-size: 17px;
    }
 
-   img {
+#food-image   {
     border-radius: 8px;
     border: 1px solid black;
     padding: 5px;
     width: 150px;
+  }
+
+#avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 60px;
   }
   
