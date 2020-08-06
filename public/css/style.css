@@ -70,13 +70,13 @@ main {
     color: white;
   }
 
-  #new-form {
+  #new-form, #edit-form{
     display: grid;
     grid-gap: 10px;
     grid-template-columns: repeat(2, minmax(auto, 22rem));
   }
   
-  #new-form *,  #add-comment-form * {
+  #new-form *,  #add-comment-form, #edit-form *{
     font-size: 20px;
     padding: 5px;
     border-radius: 5px;
@@ -141,4 +141,11 @@ main {
      margin-bottom: 2rem;
      font-size: 17px;
    }
+
+   img {
+    border-radius: 8px;
+    border: 1px solid black;
+    padding: 5px;
+    width: 150px;
+  }
   

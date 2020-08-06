@@ -4,6 +4,7 @@
         <th>Title</th>
         <th>Opinion</th>
         <th>Rating</th>
+        <th></th>
     </thead>
     <tbody>
         <% reviews.forEach(function(r) { %>
@@ -11,11 +12,16 @@
                 <td><%= r.title %></td>
                 <td><%= r.opinion %></td>
                 <td><%= r.rating %>⭐️'s</td>
-                <td><%= r.image %></td>
+                <td><img id="food-image"src="<%= r.image %>" alt="Food Image"></td>
+                <td>
                 <form action="/reviews/<%= r._id %>?_method=DELETE" 
                     class="delete-form" method="POST">
                     <button type="submit">🗑</button>
                 </form>
+                </td>
+            <td>
+                    <a href="/reviews/<%= r._id %>/edit">✏️</a>
+            </td>
                 <td><a href="/reviews/<%= r._id %>">DETAILS</a></td>
             </tr>
         <% }) %>

@@ -15,16 +15,6 @@ function create(req, res) {
     });
    }
 
-// function deleteComment(req, res) {
-//     Comment.findOne({'comments._id': req.params.id}, function(err, review) {
-//       const commentSubdoc = review.comments.id(req.params.id);
-//       commentSubdoc.remove();
-//       review.save(function(err) {
-//         res.redirect(`/reviews/${review._id}`);
-//     });
-//   });
-// }
-
 function deleteComment(req, res) {
   Review.findById(req.params.id, function(err, review ) {
   let commentIdx = null;

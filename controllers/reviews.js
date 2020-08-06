@@ -6,6 +6,8 @@ module.exports = {
     index,
     show,
     delete: deleteReview,
+    update,
+    edit
 };
 
 function index(req, res) {
@@ -16,7 +18,6 @@ function index(req, res) {
 
 function show(req, res) {
     Review.findById(req.params.id, function(err, review) {
-        console.log(review)
       res.render('reviews/show', { title: 'Review Detail', review, user: req.user });
     });
   }
@@ -39,4 +40,20 @@ function deleteReview(req, res) {
     });
 }
 
+function edit(req, res) {
+    Review.findById(req.params.id, function(err, review) {
+      res.render(`reviews/edit`, { title:'Edit Review', user: req.user, review });
+    });
+}
+
+function update(req, res) {
+    // Review.findById(req.params.id, function(err, review) {
+        Review.update(req.params.id, {$set: {
+            title:req.body.title, 
+            link:req.body.link, 
+            image:req.body.image, 
+            opinion:req.body.opinion}})
+        // Review.save (function(err) {
+        res.redirect(`${req.params.id}`);
+        };
 
