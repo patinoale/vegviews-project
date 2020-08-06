@@ -30,6 +30,7 @@ const reviewSchema = new Schema({
         default: 5
     }, 
     link: String,
+    image: String,
     comments: [commentSchema]
 }, { timestamps: true });
 

@@ -11,6 +11,7 @@
                 <td><%= r.title %></td>
                 <td><%= r.opinion %></td>
                 <td><%= r.rating %>⭐️'s</td>
+                <td><%= r.image %></td>
                 <form action="/reviews/<%= r._id %>?_method=DELETE" 
                     class="delete-form" method="POST">
                     <button type="submit">🗑</button>

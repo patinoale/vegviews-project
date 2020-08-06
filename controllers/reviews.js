@@ -16,6 +16,7 @@ function index(req, res) {
 
 function show(req, res) {
     Review.findById(req.params.id, function(err, review) {
+        console.log(review)
       res.render('reviews/show', { title: 'Review Detail', review, user: req.user });
     });
   }
