@@ -11,9 +11,12 @@
 <body>
   <nav>
     <h2 id="app-name">VegViews</h2>
+      <% if(user) { %> 
     <a href="/reviews/new" <%- title === 'Add Review' ? 'class="active"' : '' %>>ADD REVIEW</a>
+  <% } %>
+
     <a href="/reviews" <%- title === 'All Reviews' ? 'class="active"' : '' %>>ALL REVIEWS</a>
-    <% if (user) { %>
+    <% if(user) { %>
       <a href="/logout">Log Out 🔓</a>
     <% } else { %>
       <a href="/auth/google">Login with Google 🔐</a>

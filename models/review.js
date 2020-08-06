@@ -11,6 +11,9 @@ const commentSchema = new Schema({
         min: 1, 
         max: 5,
         default: 5
+    },
+    author: {
+        type: Schema.Types.ObjectId, ref: 'User'
     }
     }, { timestamps: true });
 
@@ -31,7 +34,10 @@ const reviewSchema = new Schema({
     }, 
     link: String,
     image: String,
-    comments: [commentSchema]
+    comments: [commentSchema],
+    author: {
+        type: Schema.Types.ObjectId, ref: 'User'
+    }
 }, { timestamps: true });
 
 module.exports = mongoose.model('Review', reviewSchema);

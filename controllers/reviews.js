@@ -27,6 +27,7 @@ function newReview(req, res) {
 }
 
 function create(req, res) {
+    req.body.author = req.user._id
     const review = new Review(req.body);
     review.save(function(err) {
         if (err) return res.render('reviews/new');
@@ -47,13 +48,12 @@ function edit(req, res) {
 }
 
 function update(req, res) {
-    // Review.findById(req.params.id, function(err, review) {
-        Review.update(req.params.id, {$set: {
+        Review.findByIdAndUpdate(req.params.id,  {
             title:req.body.title, 
             link:req.body.link, 
             image:req.body.image, 
-            opinion:req.body.opinion}})
-        // Review.save (function(err) {
-        res.redirect(`${req.params.id}`);
-        };
-
+            opinion:req.body.opinion}, function(err, review) {
+                res.redirect(`${req.params.id}`);
+            })
+ };
+    

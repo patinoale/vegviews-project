@@ -14,6 +14,7 @@
                 <td><%= r.rating %>⭐️'s</td>
                 <td><img id="food-image"src="<%= r.image %>" alt="Food Image"></td>
                 <td>
+                <% if ( r.author && r.author.equals(user && user._id)) { %>
                 <form action="/reviews/<%= r._id %>?_method=DELETE" 
                     class="delete-form" method="POST">
                     <button type="submit">🗑</button>
@@ -22,7 +23,8 @@
             <td>
                     <a href="/reviews/<%= r._id %>/edit">✏️</a>
             </td>
-                <td><a href="/reviews/<%= r._id %>">DETAILS</a></td>
+            <% } %>
+                <td><a href="/reviews/<%= r._id %>">More</a></td>
             </tr>
         <% }) %>
     </tbody>

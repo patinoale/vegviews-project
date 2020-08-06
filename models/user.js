@@ -6,9 +6,6 @@ const userSchema = new mongoose.Schema({
     name: String,
     email: String,
     avatar: String,
-    reviews: {
-    type: Schema.Types.ObjectId, ref: 'Review'
-    },
     googleId: String
   }, {
     timestamps: true

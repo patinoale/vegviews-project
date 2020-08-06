@@ -67,7 +67,7 @@ main {
   }
   
   nav > a.active {
-    color: white;
+    color: orange;
   }
 
   #new-form, #edit-form{

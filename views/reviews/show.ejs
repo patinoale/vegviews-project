@@ -47,10 +47,12 @@
           <td><%= c.content %></td>
           <td><%= c.cRating %></td>
         <td>
+          <% if ( c.author && c.author.equals(user && user._id)) { %>
           <form action="/reviews/<%= review._id %>/<%= c._id %>?_method=DELETE" 
             class="delete-form" method="POST">
             <button type="submit">🗑</button>
-        </form>
+        </form> 
+        <% } %>
       </td>
         </tr>
         <% }); %>

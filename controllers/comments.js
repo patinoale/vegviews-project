@@ -6,10 +6,10 @@ module.exports = {
 };
 
 function create(req, res) {
+  req.body.author = req.user._id //*
     Review.findById(req.params.id, function(err, review) {
       review.comments.push(req.body);
       review.save(function(err) {
-        console.log('hi');
         res.redirect(`/reviews/${review._id}`);
       });
     });
