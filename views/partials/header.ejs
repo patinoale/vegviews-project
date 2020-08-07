@@ -10,19 +10,17 @@
 </head>
 <body>
   <nav>
-    <h2 class="logo">VegViews</h2>
-    <img class="logo" id="logo-image" src="https://i.imgur.com/u9PbQtH.png" alt="logo image">
+    <h2 id="logo">VegViews <img id="logo-image" src="https://i.imgur.com/F34KrxA.png" alt="logo image"></h2>
       <% if(user) { %> 
-    <a href="/reviews/new" <%- title === 'Add Review' ? 'class="active"' : '' %>>ADD REVIEW</a>
+    <a class="nav-buttons" href="/reviews/new" <%- title === 'Add Review' ? 'class="active"' : '' %>>Add Review</a>
   <% } %>
 
-    <a href="/reviews" <%- title === 'All Reviews' ? 'class="active"' : '' %>>ALL REVIEWS</a>
+    <a class="nav-buttons" href="/reviews" <%- title === 'All Reviews' ? 'class="active"' : '' %>>All Reviews</a>
     <% if(user) { %>
-      <a href="/logout">Log Out 🔓</a>
+      <a class="nav-buttons" href="/logout">Log Out 🔓</a>
       <img id="avatar" src="<%= user.avatarURL %>" alt="avatar">
     <% } else { %>
-      <a href="/auth/google">Login with Google 🔐</a>
+      <a class="nav-buttons" href="/auth/google">Log in with Google 🔐</a>
     <% } %>
   </nav>
   <main>
-    <h1><%= title %></h1>

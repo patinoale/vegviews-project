@@ -1,28 +1,28 @@
 <%- include('../partials/header') %>
-
-<form id="new-form" action="/reviews" method="POST">
-  <label>Title:
-    <input type="text" name="title">
+<h1>Create New Review</h1>
+<form  action="/reviews" method="POST">
+  <label></label>
+    <input class="new-input" type="text" name="title" placeholder="Review Title"><br>
   </label>
-  <label>Link:
-    <input type="text" name="link">
-  <label>Rating:
+  <label>
+    <input class="new-input" type="text" name="link" placeholder="Recipe/Restaurant URL"><br>
+  <label id="rating-label">Rating:
   </label>
-  <select name="rating">
+  <select id="rating-input" name="rating">
     <option value="1">1</option>
     <option value="2">2</option>
     <option value="3">3</option>
     <option value="4">4</option>
     <option value="5">5</option>
-  </select>
+  </select><br>
   </label>
-  <label>Image Link:
-    <input type="text" name="image">
+  <label>
+    <input class="new-input" type="text" name="image" placeholder="Image Link"><br>
   </label>
-  <label>Opinion:
-    <input type="text" name="opinion">
+  <label>
+    <input  class="new-input" type="text" name="opinion" placeholder="Opinion"><br>
   </label>
-  <input type="submit" value="Add Review">
+  <input id="sumbit-new-button" type="submit" value="Add Review">
 </form>
 
 <%- include('../partials/footer') %>

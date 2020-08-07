@@ -1,40 +1,25 @@
 <%- include('../partials/header') %>
-
+<h1>VegViews <img id="title-img" src="https://i.imgur.com/F34KrxA.png" alt="vegan logo"></h1>
 <section id="show-page">
-  <div>Title: </div>
-  <div><%= review.title %></div>
   <div></div>
-  <div><img id="food-image"src="<%= review.image %>" alt="Food Image"></div>
-  <div>Review: </div>
-  <div><%= review.opinion %></div>
-  <div>Rating: </div>
-  <div><%= review.rating %></div>
-  <div>Check it out:</div>
-  <div><a target='_blank' href="<%= review.link %>">HERE</a></div>
+  <div id="show-title"><%= review.title %></div>
+  <div></div>
+  <div><img id="show-image"src="<%= review.image %>" alt="Food Image"></div>
+  <div></div>
+  <div id="show-opinion"><%= review.opinion %></div>
+  <div></div>
+  <div id="show-rating"><%= review.rating %> 🧡</div>
+  <div></div>
+  <div id="show-link">Check it out: <a id="show-url"target='_blank' href="<%= review.link %>">HERE</a></div>
 </section>
 
-<h2>Comments</h2>
-<form id="add-comment-form" method="POST" action="/reviews/<%= review._id %>/comments">
- <label>Comment:</label>
-  <textarea name="content"></textarea>
- <label>Rating:</label>
- <select name="cRating">
-   <option value="1">1</option>
-   <option value="2">2</option>
-   <option value="3">3</option>
-   <option value="4">4</option>
-   <option value="5">5</option>
- </select>
- <input type="submit" value="Add Comment">
- </form>
+
 
  <% if (review.comments.length) { %>
   <table>
     <thead>
       <tr>
-        <th>Date</th>
-        <th>Comments</th>
-        <th>Rating</th>
+        <th id="comment-header">Comments</th>
         <th></th>
       </tr>
     </thead>
@@ -42,7 +27,7 @@
       <% let total = 0; %>
       <% review.comments.forEach(function(c) { %>
         <% total += c.cRating%>
-        <tr>
+        <tr id="comment-output">
           <td><%= c.createdAt.toLocaleDateString() %></td>
           <td><%= c.content %></td>
           <td><%= c.cRating %></td>
@@ -57,13 +42,26 @@
         </tr>
         <% }); %>
         <tr>
-          <td colspan="2"></td>
-          <td><strong><%= (total / review.comments.length).toFixed(1) %></strong></td>
+          <td id="avg-rating"><strong><%= (total / review.comments.length).toFixed(1) %></strong></td>
       </tr>
     </tbody>
   </table>
 <% } else { %>
   <h5>No Comments Yet</h5>
 <% } %>
+
+<form id="add-comment-form" method="POST" action="/reviews/<%= review._id %>/comments">
+  <label id="comment-text">Add a Comment</label>
+   <textarea id="comment-input"name="content"></textarea>
+  <label id="comment-rating">Rating</label>
+  <select id="comment-select" name="cRating">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+  </select>
+  <input id="comment-submit"type="submit" value="Add Comment">
+  </form>
 
 <%- include('../partials/footer') %>
