@@ -33,9 +33,11 @@ The user can also comment and rate other reviews.I created this app to make deli
 ![](https://i.imgur.com/IZQADQl.png)
 
 ## Current State of App
-![](https://i.imgur.com/h4iHvOq.png)
-![](https://i.imgur.com/Btzh3jf.png)
-![](https://i.imgur.com/G10Yoit.png)
+![](https://i.imgur.com/ZcI6KYJ.png)
+![](https://i.imgur.com/Vf8ez9E.png)
+![](https://i.imgur.com/lOEGulJ.png)
+![](https://i.imgur.com/OQkzZqI.png)
+![](https://i.imgur.com/Ut3vvCs.png)
 
 
 ## Future Features
